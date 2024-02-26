@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ships
+    uniqueID: 168017407
+    locked: 0
+  - name: Lasers
+    uniqueID: 1455758215
+    locked: 0
