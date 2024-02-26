@@ -278,7 +278,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -415,6 +415,101 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &984494067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 984494069}
+  - component: {fileID: 984494068}
+  m_Layer: 0
+  m_Name: EnemyShipPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &984494068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984494067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6624593c3b6dc44910948dc3c55be7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyShip: {fileID: 6237768015552442620, guid: 0fe469c98f09460419831a91c68bfdb6, type: 3}
+  shipCount: 10
+--- !u!4 &984494069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984494067}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1835284130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1835284132}
+  - component: {fileID: 1835284131}
+  m_Layer: 0
+  m_Name: EnemyShipSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1835284131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835284130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a6966a57f0b544fa94b027bfb15d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipPool: {fileID: 984494068}
+  spawnStartTime: 1
+  spawnIntervalTime: 3
+  maxSpawnRadius: 15
+  spawnFx: {fileID: 4024236228784433906, guid: 03146f5d645b5dd439fd4667f7d6920d, type: 3}
+--- !u!4 &1835284132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835284130}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &831669175014573171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -424,16 +519,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2806775383121974251, guid: b9dbdbcc052fc2945b502ea20ee262f3, type: 3}
-      propertyPath: laser
-      value: 
-      objectReference: {fileID: 3430226307170686517, guid: 2ae94974a056e2642b25d04cd8c34531, type: 3}
+      propertyPath: laserCount
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2806775383121974251, guid: b9dbdbcc052fc2945b502ea20ee262f3, type: 3}
       propertyPath: weaponCoolDown
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 3789775976827533303, guid: b9dbdbcc052fc2945b502ea20ee262f3, type: 3}
+      propertyPath: inputScheme
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4450506050024974664, guid: b9dbdbcc052fc2945b502ea20ee262f3, type: 3}
       propertyPath: m_Name
       value: PlayerShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450506050024974664, guid: b9dbdbcc052fc2945b502ea20ee262f3, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7518432153971119632, guid: b9dbdbcc052fc2945b502ea20ee262f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -488,3 +591,5 @@ SceneRoots:
   - {fileID: 177099697}
   - {fileID: 831669175014573171}
   - {fileID: 948169620}
+  - {fileID: 984494069}
+  - {fileID: 1835284132}
